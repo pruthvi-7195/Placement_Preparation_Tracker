@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Placement Preparation Tracker</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo">P</div><div>Prep Tracker</div></div>
+      <a class="nav-link" data-page="dashboard" href="index.html"><span class="ico">📊</span> Dashboard</a>
+      <a class="nav-link" data-page="problems" href="pages/problems.html"><span class="ico">🧩</span> Problems</a>
+      <a class="nav-link" data-page="goals" href="pages/goals.html"><span class="ico">🎯</span> Goals</a>
+      <a class="nav-link" data-page="interviews" href="pages/interviews.html"><span class="ico">💼</span> Interviews</a>
+      <a class="nav-link" data-page="analytics" href="pages/analytics.html"><span class="ico">📈</span> Analytics</a>
+      <div class="theme-toggle">
+        <span>Theme: <strong id="themeLabel">Light</strong></span>
+        <button id="themeToggle">☾ Dark</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <button class="menu-btn" aria-label="menu">☰</button>
+          <h1 style="display:inline-block;margin-left:6px">Welcome back 👋</h1>
+          <div class="subtitle">Here's your placement prep at a glance.</div>
+        </div>
+      </div>
+
+      <section class="stats-grid">
+        <div class="card stat-card purple">
+          <div class="icon">🧩</div>
+          <div class="label">Problems Solved</div>
+          <div class="value" id="stat-solved">0</div>
+        </div>
+        <div class="card stat-card blue">
+          <div class="icon">🎯</div>
+          <div class="label">Today's Goals</div>
+          <div class="value" id="stat-goals">0</div>
+        </div>
+        <div class="card stat-card green">
+          <div class="icon">💼</div>
+          <div class="label">Mock Interviews</div>
+          <div class="value" id="stat-interviews">0</div>
+        </div>
+        <div class="card stat-card orange">
+          <div class="icon">🔥</div>
+          <div class="label">Study Streak (days)</div>
+          <div class="value" id="stat-streak">0</div>
+        </div>
+      </section>
+
+      <section class="dash-grid">
+        <div class="card">
+          <div class="section-title">Recent Problems
+            <a class="btn btn-secondary btn-sm" href="pages/problems.html">View all</a>
+          </div>
+          <div id="recent-list" class="recent-list"></div>
+        </div>
+        <div class="card">
+          <div class="section-title">Quick Actions</div>
+          <div class="quick-actions">
+            <a href="pages/problems.html">➕ Log a problem</a>
+            <a href="pages/goals.html">✅ Add today's goal</a>
+            <a href="pages/interviews.html">📝 Save interview notes</a>
+            <a href="pages/analytics.html">📊 View analytics</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
