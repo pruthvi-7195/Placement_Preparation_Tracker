@@ -1,0 +1,32 @@
+.interview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.interview-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.interview-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.interview-card .head {
+  display: flex; justify-content: space-between; align-items: flex-start;
+}
+.interview-card .company { font-weight: 700; font-size: 1.05rem; }
+.interview-card .type { color: var(--text-muted); font-size: 0.82rem; }
+.interview-card .score {
+  font-size: 1.4rem; font-weight: 700;
+  color: var(--primary);
+}
+.interview-card .label { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 2px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.interview-card .text {
+  font-size: 0.88rem; line-height: 1.5;
+  background: var(--surface-2);
+  padding: 10px; border-radius: 8px;
+  white-space: pre-wrap; word-wrap: break-word;
+  max-height: 90px; overflow: auto;
+}
+.interview-card .actions { display: flex; gap: 6px; justify-content: flex-end; margin-top: 4px; }

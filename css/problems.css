@@ -1,0 +1,7 @@
+.problem-row { grid-template-columns: 2fr 1fr 1fr 1fr 1fr auto; }
+@media (max-width: 800px) {
+  .problem-row { grid-template-columns: 1fr; }
+  .problem-row .actions { justify-content: flex-start; }
+}
+.problem-row .name { font-weight: 600; }
+.problem-row .platform { color: var(--text-muted); font-size: 0.88rem; }
