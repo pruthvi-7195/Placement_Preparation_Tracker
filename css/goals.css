@@ -1,0 +1,10 @@
+.goal-row { grid-template-columns: auto 2fr 1fr 1fr 1fr auto; }
+@media (max-width: 800px) {
+  .goal-row { grid-template-columns: auto 1fr; gap: 8px; }
+  .goal-row > *:nth-child(n+3) { grid-column: 2; }
+}
+.goal-row .title { font-weight: 600; }
+.goal-row.done .title { text-decoration: line-through; color: var(--text-muted); }
+.goal-row input[type="checkbox"] {
+  width: 20px; height: 20px; accent-color: var(--primary); cursor: pointer;
+}
