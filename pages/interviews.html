@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interviews | Placement Preparation Tracker</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/interviews.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo">P</div><div>Prep Tracker</div></div>
+      <a class="nav-link" data-page="dashboard" href="../index.html"><span class="ico">📊</span> Dashboard</a>
+      <a class="nav-link" data-page="problems" href="problems.html"><span class="ico">🧩</span> Problems</a>
+      <a class="nav-link" data-page="goals" href="goals.html"><span class="ico">🎯</span> Goals</a>
+      <a class="nav-link" data-page="interviews" href="interviews.html"><span class="ico">💼</span> Interviews</a>
+      <a class="nav-link" data-page="analytics" href="analytics.html"><span class="ico">📈</span> Analytics</a>
+      <div class="theme-toggle">
+        <span>Theme: <strong id="themeLabel">Light</strong></span>
+        <button id="themeToggle">☾ Dark</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <button class="menu-btn" aria-label="menu">☰</button>
+          <h1 style="display:inline-block;margin-left:6px">Mock Interview Notes</h1>
+          <div class="subtitle">Capture questions, feedback, and scores after every mock.</div>
+        </div>
+        <button class="btn" id="addBtn">➕ Add Notes</button>
+      </div>
+
+      <div class="toolbar">
+        <input id="searchInput" class="grow" type="search" placeholder="🔍 Search by company..." />
+        <select id="filterType">
+          <option value="">All types</option>
+          <option>Technical</option><option>HR</option><option>Behavioral</option>
+          <option>System Design</option><option>Coding</option>
+        </select>
+        <select id="sortSelect">
+          <option value="date-desc">Newest first</option>
+          <option value="score-desc">Score (high → low)</option>
+          <option value="score-asc">Score (low → high)</option>
+          <option value="company">Company A→Z</option>
+        </select>
+      </div>
+
+      <div id="interviewList" class="interview-grid"></div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="interviewModal">
+    <div class="modal">
+      <h2 id="modalTitle">Add Interview Notes</h2>
+      <form id="interviewForm" class="form-grid" novalidate>
+        <div>
+          <label>Company</label>
+          <input name="company" maxlength="80" placeholder="Infosys / TCS / Wipro" />
+          <div class="error" id="err-company"></div>
+        </div>
+        <div>
+          <label>Interview type</label>
+          <select name="type">
+            <option>Technical</option><option>HR</option><option>Behavioral</option>
+            <option>System Design</option><option>Coding</option>
+          </select>
+          <div class="error" id="err-type"></div>
+        </div>
+        <div>
+          <label>Questions asked</label>
+          <textarea name="questions" maxlength="2000" placeholder="1. Reverse a linked list&#10;2. Explain TCP vs UDP"></textarea>
+          <div class="error" id="err-questions"></div>
+        </div>
+        <div>
+          <label>Feedback</label>
+          <textarea name="feedback" maxlength="1000" placeholder="What went well, what to improve…"></textarea>
+          <div class="error" id="err-feedback"></div>
+        </div>
+        <div>
+          <label>Score (0–10)</label>
+          <input type="number" name="score" min="0" max="10" step="1" />
+          <div class="error" id="err-score"></div>
+        </div>
+        <div>
+          <label>Date</label>
+          <input type="date" name="date" />
+          <div class="error" id="err-date"></div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+          <button type="submit" class="btn">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/theme.js"></script>
+  <script src="../js/interviews.js"></script>
+</body>
+</html>

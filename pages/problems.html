@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Problems | Placement Preparation Tracker</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/problems.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo">P</div><div>Prep Tracker</div></div>
+      <a class="nav-link" data-page="dashboard" href="../index.html"><span class="ico">📊</span> Dashboard</a>
+      <a class="nav-link" data-page="problems" href="problems.html"><span class="ico">🧩</span> Problems</a>
+      <a class="nav-link" data-page="goals" href="goals.html"><span class="ico">🎯</span> Goals</a>
+      <a class="nav-link" data-page="interviews" href="interviews.html"><span class="ico">💼</span> Interviews</a>
+      <a class="nav-link" data-page="analytics" href="analytics.html"><span class="ico">📈</span> Analytics</a>
+      <div class="theme-toggle">
+        <span>Theme: <strong id="themeLabel">Light</strong></span>
+        <button id="themeToggle">☾ Dark</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <button class="menu-btn" aria-label="menu">☰</button>
+          <h1 style="display:inline-block;margin-left:6px">Problem Tracker</h1>
+          <div class="subtitle">Log every problem you solve and watch your progress grow.</div>
+        </div>
+        <button class="btn" id="addBtn">➕ Add Problem</button>
+      </div>
+
+      <div class="toolbar">
+        <input id="searchInput" class="grow" type="search" placeholder="🔍 Search by name..." />
+        <select id="filterDifficulty">
+          <option value="">All difficulties</option>
+          <option>Easy</option><option>Medium</option><option>Hard</option>
+        </select>
+        <select id="filterPlatform">
+          <option value="">All platforms</option>
+          <option>LeetCode</option><option>HackerRank</option><option>CodeChef</option>
+          <option>Codeforces</option><option>GeeksforGeeks</option><option>Other</option>
+        </select>
+        <select id="filterStatus">
+          <option value="">All statuses</option>
+          <option>Solved</option><option>Attempted</option><option>Pending</option>
+        </select>
+        <select id="sortSelect">
+          <option value="date-desc">Newest first</option>
+          <option value="date-asc">Oldest first</option>
+          <option value="name">Name A→Z</option>
+          <option value="difficulty">Difficulty</option>
+        </select>
+      </div>
+
+      <div id="problemList" class="list"></div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="problemModal">
+    <div class="modal">
+      <h2 id="modalTitle">Add Problem</h2>
+      <form id="problemForm" class="form-grid" novalidate>
+        <div>
+          <label>Problem name</label>
+          <input name="name" maxlength="120" placeholder="Two Sum" />
+          <div class="error" id="err-name"></div>
+        </div>
+        <div>
+          <label>Platform</label>
+          <select name="platform">
+            <option value="">Select…</option>
+            <option>LeetCode</option><option>HackerRank</option><option>CodeChef</option>
+            <option>Codeforces</option><option>GeeksforGeeks</option><option>Other</option>
+          </select>
+          <div class="error" id="err-platform"></div>
+        </div>
+        <div>
+          <label>Difficulty</label>
+          <select name="difficulty">
+            <option value="">Select…</option>
+            <option>Easy</option><option>Medium</option><option>Hard</option>
+          </select>
+          <div class="error" id="err-difficulty"></div>
+        </div>
+        <div>
+          <label>Status</label>
+          <select name="status">
+            <option value="">Select…</option>
+            <option>Solved</option><option>Attempted</option><option>Pending</option>
+          </select>
+          <div class="error" id="err-status"></div>
+        </div>
+        <div>
+          <label>Date</label>
+          <input type="date" name="date" />
+          <div class="error" id="err-date"></div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+          <button type="submit" class="btn">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/theme.js"></script>
+  <script src="../js/problems.js"></script>
+</body>
+</html>
