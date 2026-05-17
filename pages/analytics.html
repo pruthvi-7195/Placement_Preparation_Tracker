@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics | Placement Preparation Tracker</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/analytics.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo">P</div><div>Prep Tracker</div></div>
+      <a class="nav-link" data-page="dashboard" href="../index.html"><span class="ico">📊</span> Dashboard</a>
+      <a class="nav-link" data-page="problems" href="problems.html"><span class="ico">🧩</span> Problems</a>
+      <a class="nav-link" data-page="goals" href="goals.html"><span class="ico">🎯</span> Goals</a>
+      <a class="nav-link" data-page="interviews" href="interviews.html"><span class="ico">💼</span> Interviews</a>
+      <a class="nav-link" data-page="analytics" href="analytics.html"><span class="ico">📈</span> Analytics</a>
+      <div class="theme-toggle">
+        <span>Theme: <strong id="themeLabel">Light</strong></span>
+        <button id="themeToggle">☾ Dark</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <button class="menu-btn" aria-label="menu">☰</button>
+          <h1 style="display:inline-block;margin-left:6px">Analytics</h1>
+          <div class="subtitle">Visualize your placement preparation progress.</div>
+        </div>
+      </div>
+
+      <section class="metric-grid">
+        <div class="card metric-card">
+          <div class="label">Total Problems</div>
+          <div class="value" id="m-total">0</div>
+        </div>
+        <div class="card metric-card">
+          <div class="label">Solved</div>
+          <div class="value" id="m-solved">0</div>
+        </div>
+        <div class="card metric-card">
+          <div class="label">Goal Completion</div>
+          <div class="value" id="m-goalpct">0%</div>
+        </div>
+        <div class="card metric-card">
+          <div class="label">Avg Interview Score</div>
+          <div class="value" id="m-avgscore">0.0</div>
+        </div>
+      </section>
+
+      <div class="card chart-card">
+        <h3>Progress Bars</h3>
+        <div style="margin-bottom:14px">
+          <div style="display:flex;justify-content:space-between;font-size:0.88rem;margin-bottom:6px">
+            <span>Problems solved</span>
+            <span id="bar-solved-label">0/0 (0%)</span>
+          </div>
+          <div class="progress"><span id="bar-solved" style="width:0"></span></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:0.88rem;margin-bottom:6px">
+            <span>Goal completion</span>
+            <span id="bar-goals-label">0/0 (0%)</span>
+          </div>
+          <div class="progress"><span id="bar-goals" style="width:0"></span></div>
+        </div>
+      </div>
+
+      <div class="card chart-card">
+        <h3>Weekly Activity</h3>
+        <div class="bar-chart" id="weeklyChart"></div>
+        <div class="bar-labels" id="weeklyLabels"></div>
+      </div>
+
+      <div class="card chart-card">
+        <h3>Consistency (last 28 days)</h3>
+        <p id="streakLine" style="color:var(--text-muted);font-size:0.88rem;margin-bottom:10px">Current streak: 0 days</p>
+        <div class="consistency-grid" id="consistencyGrid"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/theme.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>
