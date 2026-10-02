@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics | Placement Preparation Tracker</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/analytics.css">
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        
+        <main class="main-content">
+            <header class="page-header">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                    <h1 class="page-title">Performance Analytics</h1>
+                </div>
+            </header>
+            
+            <div class="analytics-grid animate-fade-in">
+                <!-- Goal Completion Percentage -->
+                <div class="card" style="grid-column: span 1;">
+                    <h2 class="card-title">Goal Completion Rate</h2>
+                    <div class="circular-progress-container">
+                        <div class="circular-progress" id="goal-completion-circle">
+                            <span class="progress-value" id="goal-completion-text">0%</span>
+                        </div>
+                    </div>
+                    <p style="text-align: center; color: var(--text-secondary); margin-top: 1rem;">Of all time goals</p>
+                </div>
+
+                <!-- Problems by Difficulty -->
+                <div class="card" style="grid-column: span 2;">
+                    <h2 class="card-title">Problems by Difficulty</h2>
+                    
+                    <div class="bar-chart">
+                        <div class="bar-group">
+                            <div class="bar-label">Easy</div>
+                            <div class="bar-track">
+                                <div class="bar-fill bg-success" id="bar-easy" style="width: 0%"></div>
+                            </div>
+                            <div class="bar-value" id="val-easy">0</div>
+                        </div>
+                        
+                        <div class="bar-group">
+                            <div class="bar-label">Medium</div>
+                            <div class="bar-track">
+                                <div class="bar-fill bg-warning" id="bar-medium" style="width: 0%"></div>
+                            </div>
+                            <div class="bar-value" id="val-medium">0</div>
+                        </div>
+                        
+                        <div class="bar-group">
+                            <div class="bar-label">Hard</div>
+                            <div class="bar-track">
+                                <div class="bar-fill bg-danger" id="bar-hard" style="width: 0%"></div>
+                            </div>
+                            <div class="bar-value" id="val-hard">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Platform Distribution -->
+                <div class="card" style="grid-column: span 1;">
+                    <h2 class="card-title">Platform Usage</h2>
+                    <div id="platform-stats" class="platform-stats">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Weekly Consistency -->
+                <div class="card" style="grid-column: span 2;">
+                    <h2 class="card-title">Weekly Consistency (Last 7 Days)</h2>
+                    <div class="activity-graph" id="weekly-graph">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/store.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/analytics.js"></script>
+</body>
+</html>

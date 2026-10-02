@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems | Placement Preparation Tracker</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/problems.css">
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        
+        <main class="main-content">
+            <header class="page-header">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                    <h1 class="page-title">Problem Solving Tracker</h1>
+                </div>
+                <button class="btn btn-primary" id="add-problem-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    Add Problem
+                </button>
+            </header>
+            
+            <div class="card animate-fade-in" style="margin-bottom: 2rem;">
+                <div class="filter-bar">
+                    <div class="form-group" style="margin-bottom: 0; min-width: 200px;">
+                        <select class="form-control" id="filter-difficulty">
+                            <option value="All">All Difficulties</option>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0; min-width: 200px;">
+                        <select class="form-control" id="filter-platform">
+                            <option value="All">All Platforms</option>
+                            <option value="LeetCode">LeetCode</option>
+                            <option value="HackerRank">HackerRank</option>
+                            <option value="CodeChef">CodeChef</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card animate-fade-in" style="animation-delay: 0.1s;">
+                <div id="problems-container" class="table-container">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Problem Modal -->
+    <div class="modal-overlay" id="problem-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modal-title">Add Problem</h2>
+                <button class="close-modal" id="close-modal-btn">&times;</button>
+            </div>
+            <form id="problem-form">
+                <input type="hidden" id="problem-id">
+                <div class="form-group">
+                    <label class="form-label" for="problem-name">Problem Name *</label>
+                    <input type="text" class="form-control" id="problem-name" required placeholder="e.g. Two Sum">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="problem-platform">Platform *</label>
+                    <select class="form-control" id="problem-platform" required>
+                        <option value="LeetCode">LeetCode</option>
+                        <option value="HackerRank">HackerRank</option>
+                        <option value="CodeChef">CodeChef</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="problem-difficulty">Difficulty *</label>
+                    <select class="form-control" id="problem-difficulty" required>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="problem-status">Status *</label>
+                    <select class="form-control" id="problem-status" required>
+                        <option value="Solved">Solved</option>
+                        <option value="Attempted">Attempted</option>
+                        <option value="Review">Need Review</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="problem-date">Date Solved</label>
+                    <input type="date" class="form-control" id="problem-date" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Save Problem</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/store.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/problems.js"></script>
+</body>
+</html>

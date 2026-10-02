@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Interviews | Placement Preparation Tracker</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/interviews.css">
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+        
+        <main class="main-content">
+            <header class="page-header">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                    <h1 class="page-title">Mock Interview Notes</h1>
+                </div>
+                <button class="btn btn-primary" id="add-interview-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    Add Notes
+                </button>
+            </header>
+            
+            <div id="interviews-grid" class="interviews-grid animate-fade-in">
+                <!-- Populated by JS -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Interview Modal -->
+    <div class="modal-overlay" id="interview-modal">
+        <div class="modal" style="max-width: 600px;">
+            <div class="modal-header">
+                <h2 id="modal-title">Mock Interview Notes</h2>
+                <button class="close-modal" id="close-modal-btn">&times;</button>
+            </div>
+            <form id="interview-form">
+                <input type="hidden" id="interview-id">
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label class="form-label" for="interview-company">Company Name *</label>
+                        <input type="text" class="form-control" id="interview-company" required placeholder="e.g. Infosys, TCS">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="interview-date">Date</label>
+                        <input type="date" class="form-control" id="interview-date" required>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label class="form-label" for="interview-type">Interview Type *</label>
+                        <select class="form-control" id="interview-type" required>
+                            <option value="Technical">Technical</option>
+                            <option value="HR">HR</option>
+                            <option value="Managerial">Managerial</option>
+                            <option value="System Design">System Design</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="interview-score">Self Score (Out of 10)</label>
+                        <input type="number" class="form-control" id="interview-score" min="1" max="10" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="interview-questions">Questions Asked *</label>
+                    <textarea class="form-control" id="interview-questions" rows="3" required placeholder="- What is polymorphism?&#10;- Explain ACID properties."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="interview-feedback">Feedback / Areas to Improve *</label>
+                    <textarea class="form-control" id="interview-feedback" rows="3" required placeholder="Need to work on database indexing concepts..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Save Notes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/store.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/interviews.js"></script>
+</body>
+</html>
