@@ -1,5 +1,7 @@
 # Placement Preparation Tracker
 
+🔗 **[Live Demo](https://pruthvi-7195.github.io/Placement_Preparation_Tracker/)**
+
 A modern, responsive web app to help students track their placement preparation — problems solved, daily goals, mock interview notes, and progress analytics. Built with **pure HTML, CSS, and JavaScript** (no frameworks, no build step).
 
 ## ✨ Features
